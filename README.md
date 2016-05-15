@@ -12,3 +12,4 @@ Almost of bellow styles are made by forum members of MAL, i just edit some parts
 ### Tips
 
 * You can use some service like [Dropbox](http://dropbox.com/) or [Pastbin](http://pastebin.com/) to host your css and just the ```css @import ``` rules.
+* You can get new classic and modern premade style by searching in MAL forum or in your search engine (some users have put they code in their own website or others website like Deviantart). The topic [PREMADE LAYOUTS - CLASSIC](http://myanimelist.net/forum/?topicid=318587) in MAL forum list a lot of premade styles. You can also watch [here](http://myanimelist.net/forum/?clubid=19736).
