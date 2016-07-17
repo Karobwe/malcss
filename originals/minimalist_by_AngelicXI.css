@@ -1,0 +1,178 @@
+
+
+@import "http://dl.dropbox.com/u/78340470/Icon%20Style%20Menu%20Bar/IconStyleCSSFixed.css";
+@import "http://fonts.googleapis.com/css?family=Quando";
+
+BODY {
+background-attachment: fixed;
+background-color: #FFFFFF;
+background-image: url("http://i1068.photobucket.com/albums/u449/Gaviota062/December%202012/NagatoYukifull364172.jpg");
+background-position: right center;
+background-repeat: no-repeat;
+color: #4169E1;
+cursor: url("http://i1068.photobucket.com/albums/u449/Gaviota062/Anime%20List/cursor.png"), auto;
+font-family: Quando;
+font-size: 8px;
+line-height: 13px;
+text-transform: lowercase;
+}
+#list_surround {
+left: -245px !important;
+position: absolute !important;
+}
+#list_surround tbody tr:hover {
+background-color: transparent;
+border-bottom: 1px solid #4169E1;
+}
+x {
+background-color: transparent;
+border: 0 none;
+}
+#mal_cs_powered {
+bottom: auto !important;
+position: fixed !important;
+right: 0 !important;
+}
+#mal_cs_pic, #mal_cs_listinfo, #mal_cs_links {
+border-right: medium none !important;
+}
+#mal_cs_otherlinks, #mal_cs_otherlinks div, #mal_cs_otherlinks span, #mal_cs_otherlinks strong {
+color: #4169E1 !important;
+font-family: trebuchet ms !important;
+font-size: 9px;
+font-weight: normal;
+text-transform: lowercase !important;
+}
+div#list_surround {
+float: left;
+margin: 0 auto;
+padding-left: 310px;
+padding-top: 100px;
+width: 630px;
+}
+a {
+color: #4169E1;
+font-size: 9px;
+text-decoration: none;
+text-transform: lowercase;
+}
+a:visited {
+color: #4169E1;
+font-size: 9px;
+text-decoration: none;
+text-transform: lowercase;
+}
+a:hover {
+color: #4169E1;
+cursor: default;
+font-size: 9px;
+text-decoration: none;
+text-transform: lowercase;
+}
+.td1, .td2 {
+background-color: transparent;
+border: 1px dotted transparent;
+color: #324AB2;
+font-size: 8px;
+}
+.status_selected {
+color: #4169E1;
+font-size: 9px;
+}
+.status_not_selected {
+color: #6495ED;
+font-size: 9px;
+}
+.status_selected a {
+font-size: 11px;
+}
+.status_not_selected a {
+color: #4169E1;
+font-size: 9px;
+}
+.table_header {
+color: #4169E1;
+font-size: 9px;
+padding-bottom: 10px;
+}
+.table_headerLink {
+color: #4169E1;
+font-size: 9px;
+}
+.table_headerLink:visited {
+color: #4169E1;
+font-size: 9px;
+}
+.table_headerLink:hover {
+color: #4169E1;
+font-size: 9px;
+}
+.header_cw {
+}
+.header_completed {
+}
+.header_onhold {
+}
+.header_dropped {
+}
+.header_ptw {
+}
+.header_title {
+color: #4169E1;
+font-size: 30px;
+font-weight: bold;
+letter-spacing: -2px;
+padding-bottom: 30px;
+padding-top: 15px;
+text-align: center;
+text-transform: lowercase;
+}
+.category_totals {
+font-size: 9px;
+padding-top: 14px;
+text-align: center;
+}
+#grand_totals {
+font-size: 9px;
+text-align: center;
+}
+.header_al {
+}
+.header_al_links {
+}
+.animetitle {
+}
+small a {
+color: #4169E1;
+font-size: 8px;
+}
+small a:hover {
+color: #6495ED;
+font-size: 8px;
+}
+#copyright {
+font-size: 9px;
+margin: 0 auto;
+padding-bottom: 20px;
+padding-top: 20px;
+text-align: center;
+}
+
+#copyright:after {
+font-size: 9px;
+content: "Original List Design by AngelicXI.";
+color: #880088;
+}
+
+#inlineContent {
+background-image: url("http://i1068.photobucket.com/albums/u449/Gaviota062/December%202012/2exr03p.png");
+bottom: 0;
+display: inline !important;
+height: 20px;
+margin-bottom: 0;
+position: fixed;
+right: 0;
+width: 100%;
+z-index: -10 !important;
+}
+
