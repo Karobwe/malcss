@@ -1,0 +1,185 @@
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/TopMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/TabContent.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/CategoryMenu.css);
+@font-face {
+	font-family: 'PT Sans';
+	src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v8/LKf8nhXsWg5ybwEGXk8UBQ.woff) format('woff');
+}
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+  
+  
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+  
+  
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+  
+  
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+  
+  
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+/* TOP MENU BUTTONS */
+/* FOR ANIME LIST */
+/* #mal\_cs_links div:last-of-type a:first-of-type { display: none; } */ /* DISABLE ANIMELIST BUTTON */
+
+/* FOR MANGA LIST */
+#mal\_cs_links div:last-of-type a:last-of-type { display: none; } /* DISABLE MANGALIST BUTTON */
+
+body {
+	font-family: 'PT Sans', serif;
+	font-size: 16px;
+	color: #595757;
+	background-color: rgb(255, 255, 255);
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/Images/background.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+a { color: #595757; text-decoration: none; }
+
+#list_surround:before {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+	margin: -117px 0 0 -65px;
+	width: 500px;
+	height: 100%;
+	padding: 117px 65px 94px;
+	box-shadow: 0 0 10px #000000;
+	z-index: 4;
+}
+
+#list_surround {
+	position: relative;
+	left: calc(100% - 675px);
+	margin: 100px 0 40px;
+	width: 500px;
+	background-color: rgb(255, 255, 255);
+	/* Table borders */
+	background-clip: padding-box;
+	border-color: transparent;
+	border-style: solid; 
+	border-width: 117px 65px 94px; 
+	border-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/Images/frame.png) 117 65 94 round;
+	-moz-border-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/Images/frame.png) 117 65 94 round;
+	-webkit-border-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/Images/frame.png) 117 65 94 round;
+}
+
+#list_surround br { display:none; }
+
+.td1, .td2 { color: #595757; }
+
+.borderRBL, .borderRBL a  { text-align: left !important; }
+
+.borderRBL {
+	display: block;
+	margin: 0 auto;
+	width: 450px;
+	padding: 5px;
+	color: #80cde8 !important;
+	font-size: 13px;
+	line-height: 15px;
+	border-bottom: solid 1px #80cde8;
+}
+
+.borderRBL small { visibility: visible !important; }
+
+td[class^='td']:not(.borderRBL):first-child, td[class^='td']:not(.borderRBL):last-child { width: 50px !important; }
+
+td[class^='td']:not(.borderRBL):first-child { text-align: left; padding-left: 5px; }
+
+td[class^='td']:not(.borderRBL):last-child { text-align: right; padding-right: 5px; }
+
+.animetitle { line-height: 18px; }
+
+.animetitle + small {
+	visibility: visible !important;
+	text-transform: lowercase;
+	padding: 0 5px 1px;
+	font-size: 13px;
+	color: #FFFFFF;
+	background-color: rgb(128, 205, 232);
+	border-radius: 5px;
+}
+
+tr:hover > .td1:not(.borderRBL), tr:hover > .td2:not(.borderRBL) { box-shadow: 0 1px 0 #80cde8; }
+
+/* EDIT-MORE */
+#list_surround small { visibility: hidden; }
+
+#list_surround tr:hover small, #list_surround tr:hover small a { visibility: visible; }
+
+/* HEADERS */
+.header_title {
+	pointer-events: none;
+	display: inline-block;
+	height: 80px;
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	margin: auto 0;
+	width: 600px;
+	height: 70px;
+	font-size: 0;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Nozaki/Images/headers_bg.png);
+	background-repeat: no-repeat;
+}
+
+.header_cw span { background-position: 10px 0; }
+
+.header_completed span { background-position: 10px -70px; }
+
+.header_onhold span { background-position: 10px -140px; }
+
+.header_dropped span { background-position: 10px -210px; }
+
+.header_ptw span { background-position: 10px -280px; }
+
+.category_totals { border-top: solid 1px #80cde8; }
+
+.category_totals, #copyright {
+	display: block;
+	margin: 10px auto;
+	width: 450px;
+	padding-top: 10px; 
+	text-align: center;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+#grand_totals { display:none; }
+
+#copyright { 
+	margin-top: 0 !important;
+	padding: 2px 0;
+	color: #FFFFFF;
+	border-radius: 12px;
+}
+
+.header_cw ~ #copyright { background-color: rgb(144, 195, 31); }
+.header_completed ~ #copyright { background-color: rgb(240, 130, 0); }
+.header_onhold ~ #copyright { background-color: rgb(30, 179, 234); }
+.header_dropped ~ #copyright { background-color: rgb(35, 184, 188); }
+.header_ptw ~ #copyright { background-color: rgb(203, 103, 164); }
+#grand_totals ~ #copyright { background-color: rgb(250, 190, 0); }
+
+#copyright:after {
+	display: block;
+	content: 'Designed by Hahaido.';
+}

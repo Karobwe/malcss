@@ -1,0 +1,220 @@
+@import url(http://fonts.googleapis.com/css?family=Cutive+Mono|Shadows+Into+Light+Two|Racing+Sans+One);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Yuno/TabContent.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Yuno/TopMenu.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Yuno/CategoryMenu.css);
+/* COVERS */
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/covers_more.css); /* for anime list */
+/*@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/manga_covers_more.css);*/ /* for manga list */
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Favorites.css); /* Delete this line */
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+
+
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+
+
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+
+
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+
+
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+/* Cursor */
+* { cursor: url(http://i.imgur.com/dili25X.png), auto; }
+
+body:before {
+	position: absolute;
+	display: block;
+	content: '';
+	left: 0;
+	top: -10px;
+	width: 100%;
+	height: 10px;
+	box-shadow: 0 0 16px #fa0107;
+}
+
+body {
+	font-family: 'Cutive Mono', serif;
+	font-size: 12px;
+        color: #2b2f3c;
+	background-color: rgb(0, 0, 0);
+	background-image: url(http://i.imgur.com/cNYTeAq.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left bottom;
+	background-size: cover;
+}
+
+.table_headerLink, .td1, .td2, .td1 a, .td2 a, .category_totals { font-size: 14px; color: #2b2f3c; }
+
+tr:hover td[class^='td'] { background-color: rgb(43, 47, 60); }
+
+tr:hover td[class^='td'], tr:hover td[class^='td'] a { color: #FFFFFF; }
+
+a { text-decoration: none; }
+
+#list_surround:before {
+	position: absolute;
+	display: block;
+	content: '';
+	left: 64px;
+	top: 77px;
+	width: 700px;
+	min-height: calc(100% + 320px);
+	height: calc(100% - 83px);
+	background: url(http://i.imgur.com/dBajnkL.png) center center repeat;
+	z-index: -1;
+}
+
+#list_surround:after {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+	left: 0;
+	top: -48px;
+	width: 700px;
+	min-height: calc(100% + 265px);
+	height: calc(100% - 138px);
+	/* Table borders */
+	background-clip: padding-box;
+	border-color: transparent;
+	border-style: solid; 
+	border-width: 180px 64px 305px; 
+	border-image: url(http://i.imgur.com/cCyWnus.png) 180 64 305 round;
+	-moz-border-image: url(http://i.imgur.com/cCyWnus.png) 180 64 305 round;
+	-webkit-border-image: url(http://i.imgur.com/cCyWnus.png) 180 64 305 round;
+	z-index: 3;
+}
+
+#list_surround {
+	position: relative;
+	margin-top: 192px;
+	left: 32px;
+	width: 700px;
+	padding: 90px 64px 0;
+}
+
+#list_surround br { display:none; }
+
+.td1, .td2  { 
+	vertical-align: top; 
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+}
+
+.animetitle + small {
+	color: #FFFFFF !important;
+	font-size: 12px !important;
+	padding: 0 4px;
+	text-transform: lowercase;
+	background-color: rgb(43, 47, 60);
+}
+
+/* HEADERS */
+.header_title {
+	display: block;
+	height: 40px;
+}
+
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	display: inline-block;
+	width: 700px;
+	font-size: 0;
+}
+
+.header_cw:after, .header_completed:after, .header_onhold:after, .header_dropped:after, .header_ptw:after {
+	position: absolute;
+	display: inline-block;
+	margin-top: -44px;
+	width: 700px;
+	line-height: 44px;
+	font-family: 'Racing Sans One', cursive;
+	font-size: 26px;
+	text-align: center !important;
+	border-bottom: solid 2px #2b2f3c;
+}
+
+.header_cw:after { content: 'Incoming'; }
+.header_completed:after { content: 'Completed calls'; }
+.header_onhold:after { content: 'Missed calls'; }
+.header_dropped:after { content: 'Blocked list'; }
+.header_ptw:after { content: 'Outgoing'; } 
+
+.category_totals {
+	text-align: center;
+	font-size: 11px;
+	text-transform: uppercase;
+	height: 44px;
+	border-top: solid 2px #2b2f3c;
+	border-bottom: solid 2px #2b2f3c;
+}
+
+#grand_totals { display: none; }
+
+#copyright:before {
+	display: block;
+	content: 'List designed by Hahaido.';
+}
+
+#copyright:after {
+	position: absolute;
+	display: block;
+	content: 'Hahaido'; /* Put your name here */
+	width: 700px;
+	margin-top: 408px;
+	padding: 0 !important;
+	line-height: 44px;
+	font-family: 'Racing Sans One', cursive;	
+	font-size: 26px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#copyright {
+	position: relative !important;
+	margin-top: 0 !important;
+	padding-bottom: 6px;
+	text-align: center !important;
+	z-index: 4;
+}
+
+#copyright a { font-weight: bold; color: #fa0107; }
+
+#copyright a:hover { text-shadow: 0 0 0.2em #fa0107; }
+
+/* COVERS */
+.hide { 
+	visibility: hidden;
+	position: absolute;
+	display: block !important; 
+	z-index: 5; 
+}
+
+:hover + .hide {
+	visibility: visible;
+	margin: 2px 0 0 484px;
+	width: 208px;
+	height: 300px;
+	background-color: rgb(255, 255, 255); 
+	background-repeat: no-repeat;
+	background-size: 200px 284px;
+	background-position: center 20%;
+	border: solid 2px #2b2f3c;
+	box-shadow:
+ 		0 1px 0 rgba(255,255,255,.2),
+ 		0 4px 5px rgba(0,0,0,.6),
+		0 1px 0 rgba(0,0,0,.6);
+}

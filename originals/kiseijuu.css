@@ -1,0 +1,126 @@
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/TopMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/TabContent.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/CategoryMenu.css);
+@import url(http://fonts.googleapis.com/css?family=Noticia+Text);
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+  
+  
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+  
+  
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+  
+  
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+  
+  
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+body {
+	font-family: 'Noticia Text', serif;
+	background-color: rgb(0, 0, 0);
+	background: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/Images/background.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left top;
+	background-size: cover;
+}
+
+body, a, .td1, .td2 { color: #775359; font-size: 15px; }
+
+a { text-decoration: none; }
+
+#list_surround:before {
+	position: absolute;
+	display: block;
+	content: '';
+	left: 0;
+	top: -320px;
+	width: 650px;
+	height: 295px;
+	background: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/Images/top.png) no-repeat;
+}
+
+#list_surround {
+	position: relative;
+	left: calc(100% - 700px);
+	width: 650px;
+	margin-top: 320px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/Images/table_bg.png), url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/Images/bg.jpg);
+	background-repeat: no-repeat, repeat;
+	background-position: right center, center center;
+	background-attachment: fixed, scroll;
+	box-shadow: inset 0 0 2px 4px #f9dcbf, inset 6px 0 0 #dbb289, inset -6px 0 0 #dbb289, inset 0 6px 0 #dbb289, inset 0 -6px 0 #dbb289, inset 0 0 12px #000000;
+}
+
+#list_surround br { display:none; }
+
+.animetitle + small {
+	font-size: 13px;
+	color: #a57880;
+	text-transform: lowercase;
+}
+
+/* HEADERS */
+.header_title {
+	display: block;
+	height: 200px;
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	width: 650px;
+	height: 200px;
+	font-size: 0;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Kiseijuu/Images/headers_bg.png);
+	background-repeat: no-repeat;
+}
+
+.header_cw span { background-position: center 0; }
+
+.header_completed span { background-position: center -200px; }
+
+.header_onhold span { background-position: center -400px; }
+
+.header_dropped span { background-position: center -600px; }
+
+.header_ptw span { background-position: center -800px; }
+
+.category_totals {
+	width: 638px;
+	color: #a57880;
+	padding: 5px 5px 10px;
+	font-size: 13px;
+	text-align: center;
+}
+
+#grand_totals { display:none; }
+
+#copyright {
+	position: absolute;
+	display: block;
+	margin-top: 0 !important;
+	width: 640px;
+	color: #dd9fa7;
+	padding: 5px;
+	font-size: 11px;
+	text-align: center;
+	background-color: rgb(249, 220, 191);
+	text-transform: uppercase;
+}
+
+#copyright:after {
+	content: 'List designed by Hahaido.';
+}

@@ -1,0 +1,375 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Cut);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/TopMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/TabContent.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/CategoryMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Animation.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Reviews.css);
+/* COVERS, delete / with * before and after a link */
+/*@import url(https://googledrive.com/host/0BxjwQr0BBXs-aWFrYzJjVnpoVVE);*/ /* for anime list */
+@import url(https://dl.dropboxusercontent.com/s/aunymjyr9cqdxjl/manga.css); /* for manga list */
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+  
+  
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+  
+  
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+  
+  
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+  
+  
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+td[class^='td']:nth-of-type(2) { width: 360px !important; }
+
+.table_header[width="125"], span[id*="tagLinks"], div[id*="tagChangeRow"] { display: none !important; }
+
+td[class^='td'][width="125"] { width: 0; }
+
+.hide {
+	visibility: hidden;
+	position: fixed !important;
+	display: block !important;
+	left: 292px; 
+	bottom: 75px;
+	width: 100px;
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 4;
+}
+
+:hover + .hide {
+	visibility: visible;
+	animation: Magic linear 1s;
+        -webkit-animation: Magic linear 1s;
+}
+
+/* LIST SETTINGS */
+
+/* Custom cursor */
+a { cursor: hand !important; }
+
+a { text-decoration: none !important; }
+
+body {
+	font-family: 'Nova Cut', cursive;
+	font-size: 14px;
+	letter-spacing: .5px;
+	background-color: rgb(0, 0, 0);
+	overflow: hidden;
+}
+
+#list_surround:before, #list_surround:after {
+	pointer-events: none;
+	position: fixed;
+	display: block;
+	content: '';
+	background-repeat: no-repeat;
+}
+
+#list_surround:before {
+	right: 140px;
+	margin-top: -40px;
+	width: 577px;
+	height: 752px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/frame.png); 
+	background-size: 100% 100%;
+	z-index: -1; 
+}
+
+#list_surround:after {
+	right: 60px;
+	top: 50%;
+	margin-top: -440px;
+	width: 186px;
+	height: 161px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/gargoyle.png); 
+	background-size: 100% 100%;
+}
+
+#list_surround {
+	position: absolute;
+	right: 0;
+	top: 50%; 
+	margin-top: -342px;
+	width: 512px;
+	height: 672px;
+	padding-right: 167px;
+	overflow-y: scroll;
+}
+
+.td1, .td2 { 
+	padding: 6px 0 3px; 
+	line-height: 16px;
+	vertical-align: top;
+	transition: background-color .4s ease;
+	-webkit-transition: background-color .4s ease;
+}
+
+.animetitle, .animetitle + small { display: table-cell; }
+
+.animetitle span { 
+	display: inline-block; 
+	padding-left: 8px; 
+	max-width: 330px;
+}
+
+.animetitle + small:before { content: ' '; white-space: pre-wrap; }
+
+.animetitle + small {
+	visibility: visible !important;
+	font-size: 11px;
+	text-transform: lowercase;
+	letter-spacing: .5px;
+}
+
+#list_surround small { visibility: hidden; }
+
+#list_surround small a:first-of-type { 
+	visibility: hidden;
+	position: absolute;
+	margin-left: -2px;
+	font-size: 11px;
+}
+
+a[title="View More Information"] { display: none; }
+
+#list_surround tr:hover small, #list_surround tr:hover small a { visibility: visible; text-shadow: 0 0 .2em #000000; }
+
+/* LIST COLOR */
+
+tr:hover td[class^='td']:not(.borderRBL), tr:hover td[class^='td']:not(.borderRBL) a { text-shadow: 0 0 .2em #ad1919; }
+
+/* LIST FONT COLOR */
+
+.animetitle + small { color: #ae4545; }
+
+.td1, .td2, .td1 a, .td2 a, .category_totals, #grand_totals, #copyright, #copyright a { color: #f7c18d; text-shadow: 0 0 .2em #000000; }
+
+/* HEADERS */
+
+.header_title {
+	pointer-events: none;
+	display: inline-block;
+	height: 120px;
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	margin-left: 18px;
+	margin-top: -32px;
+	width: 466px;
+	height: 150px;
+	font-size: 0;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/headers_bg.png);
+	background-repeat: no-repeat;
+	z-index: -1;
+}
+
+.header_cw span { 
+	background-position: center 0; 
+	/* for manga list */
+	/* .header_cw span { background-position: center -750px; } */
+}
+
+.header_completed span { background-position: center -150px; }
+
+.header_onhold span { background-position: center -300px; }
+
+.header_dropped span { background-position: center -450px; }
+
+.header_ptw span { background-position: center -600px; }
+
+.header_cw span:before, .header_completed span:before, .header_onhold span:before, .header_dropped span:before, .header_ptw span:before  {
+	position: absolute;
+	display: block;
+	content: '';
+	margin-top: 118px;
+	margin-left: 57px;
+	width: 350px;
+	height: 40px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/sort_bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: -1; 
+} 
+
+/* CURRENTLY WATCHING BACKGROUND */
+.status_selected:first-child {
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/current.jpg);
+}
+
+/* COMPLETED BACKGROUND */
+.status_selected:nth-child(2) {
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/completed.jpg);
+}
+
+/* ON-HOLD BACKGROUND */
+.status_selected:nth-child(3) {
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/onhold.jpg);
+}
+
+/* DROPPED BACKGROUND */
+.status_selected:nth-child(4) {
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/dropped.jpg);
+}
+
+/* PLANNED BACKGROUND */
+.status_selected:nth-child(5) {
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/planned.jpg);
+}
+
+/* ALL BACKGROUND */
+.status_selected:last-child {
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/all.jpg);
+}
+
+#grand_totals:before, .category_totals:before, #copyright:before {
+	pointer-events: none;
+	display: block;
+	content: '';
+	margin-left: -6px;
+	margin-top: -8px;
+	width: 493px;
+	height: 40px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/divider.png); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#grand_totals, .category_totals, #copyright {
+	padding: 0 10px 0 10px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.category_totals {
+	display: block;
+	margin-top: 4px;
+	padding: 0 10px 0 10px;
+}
+
+#grand_totals { padding-bottom: 4px; }
+
+#copyright:after { content: 'List designed by Hahaido.'; }
+
+#copyright a { font-size: 12px; }
+
+#inlineContent:before, #inlineContent:after {
+	position: fixed;
+	display: block;
+	content: '';
+	background-repeat: no-repeat;
+}
+
+#inlineContent:before {
+	right: 134px;
+	margin-top: -390px;
+	width: 597px;
+	height: 772px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/buttons.png); 
+	background-size: 100% 100%;
+}
+
+#inlineContent:after {
+	left: 4px;
+	bottom: 4px;
+	width: 450px;
+	height: 226px;
+	background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/bubble.png);
+}
+
+#inlineContent { 
+	pointer-events: none;
+	position: fixed;
+	display: block !important; 
+	top: 50%;
+	z-index: 4;
+}
+
+.status_not_selected a[href*="status=1"] {
+	/* for manga list */
+	/* background-position: 0 -600px; */
+}
+.status_selected a[href*="status=1"], .status_not_selected a[href*="status=1"]:hover {
+	/* for manga list */
+	/* background-position: -100px -600px; */
+}
+
+@-moz-document url-prefix() {
+	#list_surround small a:last-of-type:before { line-height: 6px; }	
+	.td1, .td2 { line-height: 17px; padding: 4px 0; }
+}
+
+@media only screen and (max-width: 1366px) {
+	/* for manga list */
+	/* .status_not_selected a[href*="status=1"] {
+		 background-position: 0 -432px; 
+	}
+	.status_selected a[href*="status=1"], .status_not_selected a[href*="status=1"]:hover {
+		background-position: -72px -432px;
+	} */
+	body { font-size: 11px; }
+	#list_surround:before { right: 102px; margin-top: -29px; width: 416px; height: 542px; }
+	#list_surround { margin-top: -232px; width: 369px; height: 484px; padding-right: 119px;}
+	.header_cw span:before, .header_completed span:before, .header_onhold span:before, .header_dropped span:before, .header_ptw span:before  {
+		margin-top: 93px;
+		margin-left: 51px;
+		width: 252px;
+		height: 29px;
+	}
+	#list_surround:after {
+		right: 42px;
+		margin-top: -300px;
+		width: 134px;
+		height: 116px; 
+	}
+	.header_title { height: 90px; }
+	.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+		margin-left: 1px;
+		margin-top: -26px;
+		width: 354px;
+		height: 114px;
+		background-image: url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Touhou/Images/headers_bg_resized.png);
+	}
+	.header_cw span { 
+		background-position: center 0; 
+		/* for manga list */
+		/* .header_cw span { background-position: center -564px; } */
+	}
+	.header_completed span { background-position: center -114px; }
+	.header_onhold span { background-position: center -228px; }
+	.header_dropped span { background-position: center -342px; }
+	.header_ptw span { background-position: center -450px; }
+	.td1, .td2 { padding: 4px 0 2px; line-height: 14px; }
+	td[class^='td'][width='30'] { width: 25px; }
+	td[class^='td'][width='45'] { width: 35px; }
+	td[class^='td'][width='70'] { width: 50px; }
+	#list_surround small a:first-of-type { margin-left: -6px; }
+	.animetitle + small { font-size: 9px; }
+	#grand_totals:before, .category_totals:before, #copyright:before { margin-left: -5px; width: 355px; height: 29px; }
+	#grand_totals, .category_totals, #copyright { padding: 0 6px 0 6px; font-size: 8px; }
+	#copyright a { font-size: 10px; }
+	#inlineContent:before {
+		right: 98px;
+		margin-top: -266px;
+		width: 430px;
+		height: 556px;
+	}
+}
+}

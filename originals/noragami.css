@@ -1,0 +1,260 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Noragami/TopMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Noragami/TabContent.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Noragami/CategoryMenu.css);
+/* COVERS */
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/covers_more.css); /* for anime list */
+/*@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/manga_covers_more.css);*/ /* for manga list */
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+  
+  
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+  
+  
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+  
+  
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+  
+  
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+* { cursor: default !important; }
+
+body:before {
+	pointer-events: none;
+	position: fixed;
+	display: block;
+	content: '';
+	left: calc(50% - 457px);
+	top: 529px;
+	width: 397px;
+	height: 450px;
+	/* Table borders */
+	background-clip: padding-box;
+	border-color: transparent;
+	border-style: solid; 
+	border-width: 0 259px; 
+	-moz-border-image: url(http://i.imgur.com/dI7hups.png) 166 259 0 round;
+	border-image: url(http://i.imgur.com/dI7hups.png) 166 259 0 round;
+}
+
+body:after {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+	left: calc(50% - 400px);
+	top: 10px;
+	width: 742px;
+	height: 450px;
+	background: url(http://i.imgur.com/v0lmIzM.png) no-repeat;
+	z-index: -1;
+}
+
+body {
+	font-family: 'Lora', serif;
+	font-size: 8px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	background-color: rgb(28, 35, 40);
+	background-image: url(http://i.imgur.com/zaE29g8.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.td1:not(.borderRBL):not(small), .td2:not(.borderRBL):not(small), .td1 a, .td2 a { font-size: 12px; color: #FFFFFF; text-shadow: 0 0 .2em #a7408c, 0 0 .2em #187b7d, 0 0 .2em #a7408c; }
+
+.animetitle + small, .borderRBL a { color: #dcdcdc; text-shadow: none; }
+
+a { text-decoration: none; }
+
+#list_surround:before, #list_surround:after {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+}
+
+#list_surround:before {
+	left: 1px;
+	top: 1px;
+	width: 397px;
+	height: 100%;
+	/* Table borders */
+	background-clip: padding-box;
+	border-color: transparent;
+	border-style: solid; 
+	border-width: 166px 259px 0; 
+	-moz-border-image: url(http://i.imgur.com/dI7hups.png) 166 259 0 round;
+	border-image: url(http://i.imgur.com/dI7hups.png) 166 259 0 round;
+	z-index: 2;
+}
+
+#list_surround:after {
+	left: calc(50% - 298px);
+	margin-top: 25px;
+	width: 595px;
+	height: 128px;
+	background: url(http://i.imgur.com/h7WtgcJ.png) no-repeat;
+	z-index: 3;
+}
+
+#list_surround {
+	position: relative;
+	margin: 335px auto 0;
+	width: 398px;
+	padding: 166px 259px 0;
+}
+
+#list_surround br { display:none; }
+
+.td1, .td2  { vertical-align: top; line-height: 20px; background-color: rgba(0, 0, 0, .5); }
+
+.animetitle { padding: 0 5px; }
+
+.animetitle + small {
+	font-size: 12px;
+	text-transform: lowercase;
+}
+
+.borderRBL {
+	padding: 0 5px;
+	font-size: 12px;
+	color: #FFFFFF;
+	box-shadow: 0 -1px 0 #FFFFFF; 
+}
+
+.borderRBL a:hover { color: #FFFFFF; }
+
+.borderRBL small { visibility: visible !important; }
+
+/* HEADERS */
+.header_title {
+	pointer-events: none;
+	display: block;
+	height: 110px;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	margin-top: 10px;
+	width: 398px;
+	height: 100px;
+	font-size: 0;
+	background-image: url(http://i.imgur.com/HcUNSAY.png);
+	background-repeat: no-repeat;
+}
+
+.header_cw span { background-position: center 0; }
+
+.header_completed span { background-position: center -100px; }
+
+.header_onhold span { background-position: center -200px; }
+
+.header_dropped span { background-position: center -300px; }
+
+.header_ptw span { background-position: center -400px; }
+
+.category_totals {
+	position: relative;
+	display: block;
+	padding: 5px;
+	color: #FFFFFF;
+	text-align: center;
+	background-color: rgba(167, 64, 140, .5);
+}
+
+#grand_totals { display:none; }
+
+#copyright {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	width: 120px;
+	color: #a7408c;
+	text-align: right !important;
+	z-index: 5;
+}
+
+#copyright:after { content: 'List designed by Hahaido.'; }
+
+#inlineContent:before, #inlineContent:after {
+	position: fixed;
+	display: block;
+	content: '';
+	top: 0;
+	width: 165px;
+	height: 100%;
+	min-width: 8.7%;
+	background-repeat: no-repeat;
+}
+
+#inlineContent:before {
+	left: 0;
+	background-image: url(http://i.imgur.com/7GtjCck.png);
+	background-position: left center;
+}
+
+#inlineContent:after {
+	right: 0;
+	background-image: url(http://i.imgur.com/zndYrGQ.png);
+	background-position: right center;
+}
+
+#inlineContent {
+	pointer-events: none;
+	position: fixed;
+	display: block !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+}
+
+.hide {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed !important;
+	display: block !important;
+	right: 20px;
+	top: 20px;
+	width: 120px;
+	height: 170px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	box-shadow: inset 1px 1px 0 #4a5258, inset -1px -1px 0 #4a5258;
+	transition: all .3s linear;
+	-webkit-transition: all .3s linear;	
+	z-index: 5;
+}
+
+:hover + .hide {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* For different screen resolutions*/
+@media only screen and (min-width: 1921px) {
+	#inlineContent:before, #inlineContent:after {
+		background-size: cover;
+	}
+}

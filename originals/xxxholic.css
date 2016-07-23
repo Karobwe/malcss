@@ -1,0 +1,137 @@
+@import url(http://fonts.googleapis.com/css?family=Astloch); /* Custom fonts */
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/TabContent.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/TopMenu.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/CategoryMenu.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Favorites.css);
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+
+
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+
+
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+
+
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+
+
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+* { cursor: url('https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/cursor.png') 2 16, auto; }
+
+#list_surround br { display:none; }
+
+body:before {
+	position: fixed !important;
+	display: block;
+	content: '';
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/Yuuko.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+
+body {
+	background-image: url('https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/background.png'); /* City background */
+	background-repeat: repeat;
+        color: #ffa67e;
+        font-size: 12px;
+	font-weight: 600;
+	font-family: 'Astloch', cursive; /* Custom font */
+	letter-spacing: 1.5px;
+	overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+#list_surround:before {
+	position: absolute !important;
+	display: block;
+	content: '';
+	left: 400px;
+	top: -154px;
+	width: 300px;
+	height: 156px;
+	background: url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/mokona.png) no-repeat;
+	z-index: 1;
+}
+
+#list_surround {
+	position: relative !important;
+	left: 45%;
+	top: 128px;
+	width: 650px;
+	margin-bottom: 158px;
+	padding-left: 12px;
+	border: 40px solid transparent;
+	background-color: rgba(0, 0, 0, 1);
+	border-radius: 10px;
+	-o-border-radius: 10px;
+	-moz-border-radius: 10px;
+ 	-webkit-border-radius: 10px;
+	border-image: url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/frame.png) 40 round;
+	-o-border-image: url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/frame.png) 40 round;
+	-moz-border-image: url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/frame.png) 40 round;
+	-webkit-border-image: url(https://dl.dropbox.com/u/78192465/MyAnimeList/xxxHolic/Images/frame.png) 40 round;
+}
+
+.animetitle {
+	font-size: 16px;
+	font-weight: 600;
+	color: #ffa67e;
+}
+
+.td1, .td2 {
+	font-size: 12px;
+	color: #ffa67e;
+	line-height: 24px !important;
+}
+
+.td1 a, .td2 a { color: #ffa67e; }
+
+#list_surround .header_title span { display: none; }
+
+.category_totals {
+	position: absolute !important;
+	display: inline-block !important;
+	margin-top: 48px;
+	width: 646px !important;
+	padding: 2px;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 22px;
+	text-align: center !important;
+	z-index: 5;
+}
+
+#grand_totals { display: none; }
+
+#copyright {
+	position: relative !important;
+	margin: 0 auto !important;
+	width: 80%;
+	text-align: center;
+	border-top: solid 1px #35366e;
+	border-bottom: solid 1px #35366e;
+}
+
+#copyright a { color: #d9898a; font-weight: 600; }
+
+#copyright a:hover { text-decoration: underline; }
+
+#copyright:after { display: block; content: 'List designed by Hahaido.'; }

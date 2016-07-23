@@ -1,0 +1,227 @@
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/SteinsGate/TabContent.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/SteinsGate/CategoryMenu.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/SteinsGate/TopMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/SteinsGate/Wrap.css);
+/* COVERS, delete / with * before and after a link */
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/covers_more.css); /* for anime list */
+/*@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/manga_covers_more.css);*/ /* for manga list */
+@font-face {
+	font-family: "basicl";
+	url("https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Fonts/basicl.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Fire Dusk - Grunge";
+	url("https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Fonts/FireDusk.woff") format("woff");
+	font-weight:normal;
+	font-style:normal;
+}
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+
+
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+
+
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+
+
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+
+
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+/* Custom cursor */
+* { cursor: url(http://i.imgur.com/SCbUlHT.png) 1 1, auto; }
+
+/* Covers settings */
+.hide {
+	pointer-events: none;
+	visibility: hidden;
+	position: absolute;
+	display: block !important;
+	margin-left: -124px !important;
+	margin-top: -24px !important;
+	width: 122px;
+	height: 122px;
+	padding: 6px;
+	border: solid 2px #a5a5a5;
+	background-clip: padding-box;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto; 
+	transform: rotate(0deg) scale(0, 0);
+	-webkit-transform: rotate(0deg) scale(0, 0);
+	transition: margin-left 1s ease-in-out, transform 1s ease-in-out;
+	-webkit-transition: margin-left 1s ease-in-out, -webkit-transform 1s ease-in-out;
+	z-index: 2;
+}
+
+:hover + .hide { 
+	visibility: visible; 
+	margin-left: 548px !important;
+	transform: rotate(360deg) scale(1, 1);
+	-webkit-transform: rotate(360deg) scale(1, 1);
+}
+
+#list_surround br { display: none; }
+
+body {
+        color: #a5a5a5;
+        font-size: 12px;
+	font-family: 'basicl';
+	background-color: rgba(12, 16, 13, 1);
+	background-image: url(http://i.imgur.com/hhvT8RU.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+a { text-decoration: none; }
+
+#list_surround:before {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+	width: 707px;
+	margin-left: -80px;
+	margin-top: -398px;
+	height: 439px;
+	background: url(http://i.imgur.com/vd8JTHT.png);
+	z-index: 2;
+}
+
+#list_surround {
+	position: relative;
+	display: block;
+	left: 394px !important;
+	margin-top: 454px;
+	margin-bottom: 100px;
+	width: 550px;
+}
+
+.animetitle { 
+	display: block;
+	min-width: 0;
+	max-width: 320px; 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 15px;
+	line-height: 24px !important;
+}
+
+.animetitle + small { 
+	visibility: hidden !important;
+	opacity: 0;
+	position: absolute;
+	display: block;
+	right: -134px;
+	margin-top: -22px;
+	padding: 2px;
+	color: #FFFFFF;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	background-color: rgba(189, 92, 39, 1);
+	transition: opacity .2s linear .9s;
+	-webkit-transition: opacity .2s linear .9s;
+	z-index: 3;
+}
+
+tr:hover .animetitle + small { visibility: visible !important; opacity: 1 !important; }
+
+.td1, .td2 {
+	font-size: 15px;
+	line-height: 24px !important;		
+	background-color: rgba(44, 38, 31, 1);
+}
+
+.td1 a, .td2 a { color: #a5a5a5; }
+
+/* HEADERS */
+.header_title { 
+	display: block; 
+	height: 210px;
+	background-color: rgba(44, 38, 31, 1);
+	border-style: solid;
+	border-color: #a5a5a5;
+	border-width: 0 2px;
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	margin-top: 5px;
+	width: 550px;
+	height: 200px;
+	font-size: 0;
+	background-image: url(http://i.imgur.com/1joowJ2.png);
+	background-repeat: no-repeat;
+}
+
+.header_cw span { background-position: center 0; }
+
+.header_completed span { background-position: center -200px; }
+
+.header_onhold span { background-position: center -400px; }
+
+.header_dropped span { background-position: center -600px; }
+
+.header_ptw span { background-position: center -800px; }
+
+.category_totals  {
+	display: block;
+	padding: 2px;
+	color: #FFFFFF;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	background-color: rgba(189, 92, 39, 1);
+}
+
+#grand_totals { display: none; }
+
+#copyright { 
+	position: absolute;
+	display: block;
+	margin-left: -36px;
+	top: -24px !important;
+	width: 492px;
+	font-size: 10px;
+	line-height: 12px;
+	z-index: 1;
+}
+
+#copyright a { color: #a5a5a5; }
+
+#copyright:before { 
+	position: absolute; 
+	display: block; 
+	content: "     I think we are going to die here But I believe that our wills will carry on to us in the future        So... It's okay "; 
+	left: 200px;  
+	margin-top: -66px; 
+	width: 250px;
+	font-family: 'Fire Dusk - Grunge';
+	font-size: 14px;
+	line-height: 16px;
+	text-align: right;
+	white-space: pre-wrap;
+	animation: Wrap 2s linear infinite;
+	-webkit-animation: Wrap 2s linear infinite;
+}
+
+#copyright:after { position: absolute; display: block; content: 'List designed by Hahaido'; left: -178px;  margin-top: -12px; }

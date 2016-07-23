@@ -1,0 +1,286 @@
+@import url(http://fonts.googleapis.com/css?family=La+Belle+Aurore|Eater|Iceberg);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/TabContent.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/CategoryMenu.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/TopMenu.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Shrink.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/covers_more.css);
+@import url(https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Favorites.css); /* Delete this line */
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+
+
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+
+
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+
+
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+
+
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+.hide {
+	position: fixed;
+    	display: inline-block !important;
+	pointer-events: none;
+	visibility: hidden;
+        bottom: 80%; 
+	left: 10px !important;
+	background-size: 200px 0px;
+	width: 0px !important;
+	height: 0px !important;
+	line-height: 24px !important; 
+	transition: background-size 1s ease-in-out, bottom 1s ease-in-out;
+	-webkit-transition: background-size 1s ease-in-out,  bottom 1s ease-in-out;
+	z-index: 10;
+}
+
+.hide:before {
+	display: block;
+	content: '';
+	width: 26px;
+	height: 250%;
+	margin-top: -354%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	background: url('https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/chain.png') repeat-y;
+}
+
+:hover + .hide:after {
+	position: absolute;
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 50em;
+	background-image: linear-gradient(-45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%);
+	background-image: -moz-linear-gradient(-45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,.7) 50%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%);
+	background-image: -webkit-gradient( linear, left top, right bottom,
+		color-stop(0, rgba(255,255,255, 0)),
+		color-stop(0.45, rgba(255,255,255, 0)),
+		color-stop(0.5, rgba(255,255,255, .7)),
+		color-stop(0.55, rgba(255,255,255, 0)),
+		color-stop(1, rgba(255,255,255, 0)));
+}
+
+:hover + .hide {
+	position: fixed !important;
+	display: block !important; 
+    	visibility: visible;
+	width: 200px !important;
+	height: 284px !important;
+	bottom: 16px !important; 
+	left: 10px !important;
+	background-repeat: no-repeat !important;
+	background-size: 200px 284px !important;
+	box-shadow: 0 0 20px rgba(255,255,255,.6), inset 0 0 20px rgba(255,255,255,1), inset 0 1px 0 rgba(255, 255, 255, 1);
+	border-radius: 50em;
+	 animation: shrink linear 1s;
+        -webkit-animation: shrink linear 1s;
+}
+
+body:before {
+	display: block !important;
+	position: fixed !important;
+	content: '';
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/Zero.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-size: contain;
+	z-index: -1;
+}
+
+body {
+	background-color: rgba(0, 0, 0, 1);
+	background-image: url('https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/back_below.png');
+	background-repeat: repeat;
+	background-position: center center;
+	cursor: url(https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/cursor.png) 1 2, auto;
+        color: #000000;
+	font-family: 'Iceberg', cursive;
+	font-size: 12px;
+}
+
+a { color: #000000; text-decoration: none; }
+
+a:hover { text-shadow: 0 0 0.2em #9c0006 !important; }
+
+#list_surround:before {
+	display: block !important;
+	position: fixed !important;
+	content: ' ';
+	left: -4px;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/Yuki.png');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-size: contain;
+	z-index: -1;
+}
+
+#list_surround {
+	position: relative;
+	display: inline-block;
+	left: 55% !important;
+	margin-left: -250px;
+	width: 500px;	
+	margin-top: 192px;
+}
+
+.animetitle { color: #9c0006 !important; line-height: 30px !important; font-weight: bold; }
+
+.animetitle + small { 
+	visibility: visible !important;
+	position: absolute !important;
+	display: block !important;
+	width: 64px;
+	margin-left: -84px !important;
+	margin-top: -30px;
+	padding: 2px 8px 0 6px;
+	font-size: 18px;
+	line-height: 28px;
+	font-family: 'Iceberg', cursive;
+	font-size: 12px;
+	text-align: center;
+	font-weight: normal !important;
+	color: #9c0006 !important;
+	white-space: nowrap !important;
+	letter-spacing: 0 !important;
+	background-color: rgba(198, 252, 226, 1);
+	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 1);
+}
+
+.table_headerLink { 
+	position: relative !important;
+	display: block !important;
+	margin-top: -15px;
+	height: 32px;
+	width: 489px;
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px 2px 5px 2px;
+	background-color: rgba(198, 252, 226, 1);
+	box-shadow: inset 0px -14px 12px rgba(0, 0, 0, 1), inset 0 -1px 2px rgba(0, 0, 0, 1);
+	border-radius: 50% 50% 0 0;
+} 
+
+.table_headerLink:hover { color: #000000; text-shadow: 0 0 0.2em #9c0006 !important; }
+
+.table_headerLink strong:before {
+	visibility: visible !important;
+	position: relative !important;
+	display: inline-block !important;
+	margin-left: 64px !important;
+	content: "Sort doesn't help you" !important;
+	text-align: center !important;
+	font-size: 18px !important;
+}
+
+.table_headerLink strong { visibility: hidden; }
+
+.td1, .td2 {
+        padding: 0.3em;
+	font-family: 'La Belle Aurore', cursive;
+	font-size: 20px;
+        background-color: rgba(235, 221, 184, 0.8); 
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;	
+}
+
+.td1 a, .td2 a { color: #FFFFFF; }
+
+.header_title {
+	font-size: 14px;
+    	font-weight: bold;
+}
+
+/* header_al is the div surrounding "User's Anime List" at the top */
+.header_al {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.header_cw, .header_completed , .header_onhold, .header_dropped, .header_ptw  { display: none; }
+
+.category_totals { 
+	position: relative !important;
+	display: block !important;
+	margin-top: 0;
+	height: 275px;
+	width: 465px;
+	color: rgba(198, 252, 226, 1);
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 32px 12px 90px 12px;
+	background-color: rgba(198, 252, 226, 1);
+	background-image: url('https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/emblem.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-shadow: inset 0px 18px 12px rgba(0, 0, 0, 1), inset 0 -1px 2px rgba(0, 0, 0, 1);
+	border-radius: 0 0 50% 50%;
+	transition: all 1s linear;
+	-webkit-transition: all 1s linear;	
+
+} 
+
+.category_totals:hover { color: #000000; text-shadow: 0 0 0.2em #9c0006; }
+
+#grand_totals  { display: none; }
+
+#copyright {
+	position: relative !important;
+	display: block !important;
+	width: 200px;
+	color: #9c0006;
+	text-align: center;
+	margin: 0 auto;
+	padding: 4px;
+	background-color: rgba(235, 221, 184, 0.8);
+	box-shadow:  0 1px 0 rgba(255, 255, 255, .2),
+ 				inset 0 4px 5px rgba(0, 0, 0, 1),
+ 				inset 0 1px 0 rgba(0, 0, 0, .6);
+	z-index: 15;
+}
+
+#copyright a { color: #000000; }
+
+#copyright a:hover { text-shadow: 0 0 0.2em #9c0006 !important; }
+
+#copyright:after { content: 'List designed by Hahaido.'; }
+
+#inlineContent {
+	pointer-events: none;
+	position: fixed;
+	display: block !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('https://dl.dropbox.com/u/78192465/MyAnimeList/Vampire%20Knight/Images/Blood.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: contain;
+	z-index: 1;
+}
